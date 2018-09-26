@@ -1,48 +1,17 @@
 import java.util.Stack;
 
+          /**
+           * ArrayIntList class - Project 1
+           * Professor. Keshtkar
+           * @author Kurtis Bassmann
+           *    @TODO Figure out best way to implement method demonstrations for Q's 5-9. 
+           *    @TODO Write JavaDoc for all methods ***  
+           */
 public class ArrayIntList {
 	private int[] elementData;
 	private int size;
 	private final int DEFAULT_CAPACITY = 20;
 
-	
-	public static void main(String args[]) {
-		
-            /**
-             * Figure out best way to implement method demonstrations for Q's 5-9.
-             */
-            /**
-             *	QuestionsFiveToNine demo = new QuestionsFiveToNine();
-             * 
-             *  class QuestionsFiveToNine{
-             *	    private int stack1;
-             *      private int stack2;
-             * 
-             *  	public QuestionsFiveToNine() {
-             *  		Stack<Integer> stack1 = new Stack();
-             *  		Stack<Integer> stack2 = new Stack();
-             *  		stack1.push(1);
-	     * 			stack1.push(22);
-	     *          	stack1.push(333);
-	     *          	stack1.push(4444);
-	     *  		stack2.push(1);
-	     *  		stack2.push(22);
-	     *  		stack2.push(333);
-             *                  stack2.push(4444);
-	     *          }
-	     *	
-	     *      public boolean equals(Stack stk1, Stack stk2){
-	     *		Stack stk3 = new Stack();
-	     *		System.out.println(stk1);
-	     *		System.out.println(stk2);
-	     *		
-	     *		return false;
-	     *      }
-	     *  }
-             */
-	}
-
-	//ArrayIntList Class
 	public ArrayIntList() {
 		size = 0;
 		elementData = new int[DEFAULT_CAPACITY];
@@ -167,23 +136,7 @@ public class ArrayIntList {
 		}
 		return longest;
 	}
-        
-//        public ArrayIntList runningTotal() {
-//            int length = this.size;
-//            ArrayIntList summationList = new ArrayIntList(length);
-//            int total = 0;
-//            int position = 0;
-//            for(int i = 0; i < length; i++){
-//                for(int k = 0; k <= position; k++){
-//                    total += elementData[k];
-//                    position++;
-//                }
-//               
-//                summationList.add(total);
-//            }
-//            return summationList;
-//        }
-        
+
         public ArrayIntList runningTotal() {
             int length = this.size;
             ArrayIntList sumList = new ArrayIntList(length);
