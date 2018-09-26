@@ -71,6 +71,8 @@ public class ArrayTest {
                 duplicates.add(8);
                 System.out.println(duplicates);
                 System.out.println("Max count for any int in the Array is: " + duplicates.maxCount());
+                
+                System.out.println("Totaled version of this list..." + duplicates.runningTotal());
 	}
 
 }

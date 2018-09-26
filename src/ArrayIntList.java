@@ -9,16 +9,16 @@ public class ArrayIntList {
 	public static void main(String args[]) {
 		
             /**
-             * Figure out best way to implement method demonstrations for Q's 5-8.
+             * Figure out best way to implement method demonstrations for Q's 5-9.
              */
             /**
-             *	QuestionsFiveToEight demo = new QuestionsFiveToEight();
+             *	QuestionsFiveToNine demo = new QuestionsFiveToNine();
              * 
-             *  class QuestionsFiveToEight{
+             *  class QuestionsFiveToNine{
              *	    private int stack1;
              *      private int stack2;
              * 
-             *  	public QuestionsFiveToEight() {
+             *  	public QuestionsFiveToNine() {
              *  		Stack<Integer> stack1 = new Stack();
              *  		Stack<Integer> stack2 = new Stack();
              *  		stack1.push(1);
@@ -31,7 +31,7 @@ public class ArrayIntList {
              *                  stack2.push(4444);
 	     *          }
 	     *	
-	     *      public boolean equals(Stack stk1, Stack stk2){ //Question 
+	     *      public boolean equals(Stack stk1, Stack stk2){
 	     *		Stack stk3 = new Stack();
 	     *		System.out.println(stk1);
 	     *		System.out.println(stk2);
@@ -63,12 +63,9 @@ public class ArrayIntList {
 	}
 
 	public void add(int index, int value) { // Check to see if List is full ?
-		//check this method * * *
 		if(size == elementData.length)
 			System.out.println("The list is full, cannot add value.");
 		else {
-			// performing a shift on elements, from index to size - 1
-			// then adding the value at the index
 			for(int i = size - 1; i >= index; i--) {
 				elementData[i + 1] = elementData[i];
 			}
@@ -170,6 +167,35 @@ public class ArrayIntList {
 		}
 		return longest;
 	}
+        
+//        public ArrayIntList runningTotal() {
+//            int length = this.size;
+//            ArrayIntList summationList = new ArrayIntList(length);
+//            int total = 0;
+//            int position = 0;
+//            for(int i = 0; i < length; i++){
+//                for(int k = 0; k <= position; k++){
+//                    total += elementData[k];
+//                    position++;
+//                }
+//               
+//                summationList.add(total);
+//            }
+//            return summationList;
+//        }
+        
+        public ArrayIntList runningTotal() {
+            int length = this.size;
+            ArrayIntList sumList = new ArrayIntList(length);
+            
+            int total = 0;
+            for(int i = 0; i < length; i++) {
+                total+=elementData[i];
+                sumList.add(total);
+            }
+            
+            return sumList;
+        }
 
 	public boolean isPairWiseSorted() {
 		if(size == 1)
