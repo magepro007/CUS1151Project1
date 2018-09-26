@@ -57,6 +57,20 @@ public class ArrayTest {
 		paired.add(0);
 		System.out.println(paired);
 		System.out.println("Array is pairwise sorted: " + paired.isPairWiseSorted());
+                
+                ArrayIntList duplicates = new ArrayIntList(10);
+                duplicates.add(3);
+                duplicates.add(3);
+                duplicates.add(1);
+                duplicates.add(1);
+                duplicates.add(1);
+                duplicates.add(1);
+                duplicates.add(2);
+                duplicates.add(8);
+                duplicates.add(8);
+                duplicates.add(8);
+                System.out.println(duplicates);
+                System.out.println("Max count for any int in the Array is: " + duplicates.maxCount());
 	}
 
 }

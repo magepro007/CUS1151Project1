@@ -144,6 +144,21 @@ public class ArrayIntList {
 	}
 
 	//Begin Project Questions...
+        public int maxCount() {
+            int maxCount = 1; int count = 1;
+            
+            for(int i = 0; i < size - 1; i++) {
+                if(elementData[i] == elementData[i+1])
+                    count++;
+                else
+                    count = 1;
+                if(count > maxCount)
+                    maxCount = count;
+            }
+            return maxCount;
+            
+        }
+        
 	public int longestSortedSequence() {
 		int longest = 1;
 		for(int i = 0; i < this.size() - 1; i++) {
