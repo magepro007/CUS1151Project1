@@ -2,27 +2,31 @@
 public class ArrayTest {
 
 	public static void main(String[] args) {
-		ArrayIntList arr = new ArrayIntList(5);
-		
+		ArrayIntList arr = new ArrayIntList(10);
+                
+		System.out.println("ArrayIntList class tester application"
+                        + "\nCreating and populating Array with 5 random integers.");
+                
 		for(int i = 0; i < 5; i++) {
-			arr.add((int)(Math.random() * 10) + 1);
+                    int rand = (int)(Math.random() * 10) + 1;
+                    System.out.println("adding " + rand + "...");
+                    arr.add(rand);
+                                System.out.println(arr);
+
 		}
-		System.out.println("ArrayIntList class tester application.\nPopulated Array with 5 random integers.");
-		System.out.println(arr);
 		
-		System.out.println("Adding 99 at index 2");
-		arr.add(2, 99);
 		
-		System.out.println("Expanding array to hold 6 integers.");
-		arr.ensureCapacity(6);
-		System.out.println("Adding the 6th integer, 0.");
-		arr.add(0);
+		System.out.println("Adding 999 at index 51");
+		arr.add(999,51);
+		
+		System.out.println("\nExpanding array to hold 15 integers.");
+		arr.ensureCapacity(15);
 		arr.toString();
 
 		System.out.println(arr);
 		System.out.println("Array contains 7 : " + arr.contains(7));
 		
-		System.out.println("index 0: " + arr.get(0));
+		System.out.println("Find indexOf 0: " + arr.get(0));
 		
 		System.out.println("Array is empty: " + arr.isEmpty());
 		

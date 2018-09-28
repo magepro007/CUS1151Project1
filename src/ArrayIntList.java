@@ -1,13 +1,10 @@
-import java.util.Stack;
-
           /**
            * ArrayIntList class - Project 1
            * Professor. Keshtkar
            * @author Kurtis Bassmann
-           *    @TODO Figure out best way to implement method demonstrations for Q's 5-9. 
-           *    @TODO Sort the list after each insertion. Check documentation if this should be implemented.
            */
 public class ArrayIntList {
+    
 	private int[] elementData;
 	private int size;
 	private final int DEFAULT_CAPACITY = 20;
@@ -48,12 +45,14 @@ public class ArrayIntList {
         /**
          * Adds the integer argument, value, to the index specified by integer argument, index.
          * All elements in the array are shifted to their next respective position in the array, to allow space for the new value.
-         * If the list is full, an error message is printed in the console.
+         * If the list is full, or the index is out of bounds of the list, an error message is printed in the console.
          * @param index the position in elementData to add the new integer to.
          * @param value the new value to add into the list
          */
-	public void add(int index, int value) { // Check to see if List is full ?
-		if(size == elementData.length)
+	public void add(int value, int index) {
+                if(index >= elementData.length)
+                    System.err.println("This index is out of range. Cannot add " + value + " to the list at index " + index + "...");
+                else if(size == elementData.length)
 			System.err.println("The list is full, cannot add value.");
 		else {
 			for(int i = size - 1; i >= index; i--) {
@@ -61,9 +60,7 @@ public class ArrayIntList {
 			}
 			elementData[index] = value;
 			size++;
-
 		}
-
 	}
 
         /**
@@ -72,7 +69,7 @@ public class ArrayIntList {
          * @return returns true if the element is found, returns false otherwise
          */
 	public boolean contains(int value) {
-		for(int i = 0; i < size; i++) {
+		for(int i = 0; i < elementData.length; i++) {
 			if(elementData[i] == value)
 				return true;
 		}
@@ -87,7 +84,7 @@ public class ArrayIntList {
          */
 	public void ensureCapacity(int capacity) {
 		int[] newAlloc = new int[capacity];
-		for(int i = 0; i < size; i++) {
+		for(int i = 0; i < elementData.length; i++) {
 			newAlloc[i] = elementData[i];
 		}
 		this.elementData = newAlloc; 
@@ -110,7 +107,7 @@ public class ArrayIntList {
          * @return the specified value's position in the list
          */
 	public int indexOf(int value) {
-		for(int i = 0; i < size; i++) {
+		for(int i = 0; i < elementData.length; i++) {
 			if(elementData.equals(value))
 				return i;
 		}
@@ -143,7 +140,7 @@ public class ArrayIntList {
          * @param value the value to store at the specified index of the list
          */
 	public void set(int index, int value) {
-            if(index < 0 || index > (size - 1))
+            if(index < 0 || index >= elementData.length)
                 System.err.println("The specified index is out of bounds");
             elementData[index] = value;
 	}
@@ -163,17 +160,13 @@ public class ArrayIntList {
          */
 	public String toString() {
 		String str = "[";
-		for(int i = 0; i < this.size; i++) {
-			if(i != size - 1)
+		for(int i = 0; i < elementData.length; i++) {
 				str += elementData[i] + ", ";
-			else
-				str += elementData[i];
 		}
 		str+="]\t\t(size: " + size + ")";
 		return str;
-		//		return elementData.toString() + "\t(size: " + size + ")";
 	}
-
+        
 	// Questions 1 - 4 ...
         
         /**
@@ -183,7 +176,7 @@ public class ArrayIntList {
         public int maxCount() {
             int maxCount = 1; int count = 1;
             
-            for(int i = 0; i < size - 1; i++) {
+            for(int i = 0; i < elementData.length - 1; i++) {
                 if(elementData[i] == elementData[i+1])
                     count++;
                 else
@@ -191,8 +184,7 @@ public class ArrayIntList {
                 if(count > maxCount)
                     maxCount = count;
             }
-            return maxCount;
-            
+            return maxCount; 
         }
         
         /**
@@ -201,7 +193,7 @@ public class ArrayIntList {
          */
 	public int longestSortedSequence() {
 		int longest = 1;
-		for(int i = 0; i < this.size() - 1; i++) {
+		for(int i = 0; i < elementData.length - 1; i++) {
 			int current = elementData[i];
 			int next = elementData[i+1];
 			if(current < next) {
@@ -217,7 +209,7 @@ public class ArrayIntList {
          * @return a new list which contains the running total of the list at each index.
          */
         public ArrayIntList runningTotal() {
-            int length = this.size;
+            int length = elementData.length;
             ArrayIntList sumList = new ArrayIntList(length);
             
             int total = 0;
@@ -225,7 +217,6 @@ public class ArrayIntList {
                 total+=elementData[i];
                 sumList.add(total);
             }
-            
             return sumList;
         }
 
@@ -237,7 +228,7 @@ public class ArrayIntList {
 	public boolean isPairWiseSorted() {
 		if(size == 1)
 			return true;
-		for(int i = 0; i < size - 1; i+=2) {
+		for(int i = 0; i < elementData.length - 1; i+=2) {
 			if(elementData[i] > elementData[i+1]) {
 				System.out.println(elementData[i] + "is greater than " + elementData[i+1]);
 				return false;
