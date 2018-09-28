@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * Advanced Data Structures Project 1 Questions 5, 6, 7, 8, and 9.
  * Contains methods for each question and a main method with test cases for each.
- * @author Hershil Vora.  Grouped with Christian Taylor and Kurtis Bassmann.
+ * @author Hershil Vora. Grouped with Christian Taylor and Kurtis Bassmann.
  * @version 1.0 9/28/18
  */
 

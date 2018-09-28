@@ -1,6 +1,14 @@
-
+          /**
+           * ArrayIntList Test class - Project 1
+           * Professor Keshtkar
+           * @author Kurtis Bassmann, Group 9 with Christian Taylor and Hershil Vora
+           */
 public class ArrayTest {
 
+    /**
+     * ArrayTest
+     * Tests the functionality of the ArrayIntList class.
+     */
 	public static void main(String[] args) {
 		ArrayIntList arr = new ArrayIntList(10);
                 

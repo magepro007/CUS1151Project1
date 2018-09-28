@@ -1,7 +1,7 @@
           /**
            * ArrayIntList class - Project 1
-           * Professor. Keshtkar
-           * @author Kurtis Bassmann
+           * Professor Keshtkar
+           * @author Kurtis Bassmann, Group 9 with Christian Taylor and Hershil Vora
            */
 public class ArrayIntList {
     
