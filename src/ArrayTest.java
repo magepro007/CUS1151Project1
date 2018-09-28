@@ -41,9 +41,11 @@ public class ArrayTest {
 		System.out.println("Testing size method. Size: " + arr.size());
 		
 		System.out.println("Adding 99 at index 2");
-		arr.add(2, 99);
-		System.out.println(arr);
+		arr.add(99,2);
+                
+                System.out.println(arr);
 		
+                
 		//Project Methods
 		System.out.println("Longest sorted sequence : " + arr.longestSortedSequence());
 		

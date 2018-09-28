@@ -160,8 +160,12 @@ public class ArrayIntList {
          */
 	public String toString() {
 		String str = "[";
-		for(int i = 0; i < elementData.length; i++) {
-				str += elementData[i] + ", ";
+                int length = elementData.length;
+		for(int i = 0; i < length; i++) {
+                    if(i != length - 1)
+			str += elementData[i] + ", ";
+                    else
+                        str += elementData[i];
 		}
 		str+="]\t\t(size: " + size + ")";
 		return str;
