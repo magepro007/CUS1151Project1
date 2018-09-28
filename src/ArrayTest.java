@@ -61,7 +61,7 @@ public class ArrayTest {
 		paired.add(3);
 		paired.add(4);
 		paired.add(0);
-		System.out.println(paired);
+		System.out.println("\nNew array: " + paired);
 		System.out.println("Array is pairwise sorted: " + paired.isPairWiseSorted());
                 
                 ArrayIntList duplicates = new ArrayIntList(10);
@@ -75,7 +75,7 @@ public class ArrayTest {
                 duplicates.add(8);
                 duplicates.add(8);
                 duplicates.add(8);
-                System.out.println(duplicates);
+                System.out.println("\nNew array: " + duplicates);
                 System.out.println("Max count for any int in the Array is: " + duplicates.maxCount());
                 
                 System.out.println("Totaled version of this list..." + duplicates.runningTotal());

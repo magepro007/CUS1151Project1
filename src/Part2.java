@@ -278,8 +278,8 @@ public class Part2
         System.out.println("Test case: normal stack");
         System.out.println();
 
-        Stack<Integer> EMPTY_STACK = new Stack<>();
-        Queue<Integer> EMPTY_QUEUE = new LinkedList<>();
+        final Stack<Integer> EMPTY_STACK = new Stack<>();
+        final Queue<Integer> EMPTY_QUEUE = new LinkedList<>();
 
         Stack<Integer> stack1 = new Stack<>();
         stack1.add(1);
